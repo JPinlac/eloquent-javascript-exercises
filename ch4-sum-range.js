@@ -5,24 +5,20 @@
 function range(start, end, step) {
     let array = [];
     if(step === undefined){
-        if(start < end)
-            step = 1;
-        else {
-            step = -1;
-        }
+        step = start < end ? 1 : -1;
     }
-    if(step > 0) {
+    if (step > 0) {
         for (let x = start; x <= end; x += step) {
             array.push(x);
         }
-    }
-    else {
+    } else {
         for (let x = start; x >= end; x += step) {
             array.push(x);
         }
     }
     return array;
 }
+
 function sum(array) {
     let total = 0;
     for(let x = 0; x < array.length; x++) {
