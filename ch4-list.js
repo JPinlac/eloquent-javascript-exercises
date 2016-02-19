@@ -1,5 +1,5 @@
 /**
- * Created by pinlacj on 2/19/2016.
+ * Created by Jonathan Pinlac on 2/19/2016.
  */
 'use strict';
 function arrayToList(array) {
@@ -9,4 +9,15 @@ function arrayToList(array) {
     }
     return list;
 }
-arrayToList([10,20,30]);
+
+function listToArray(list) {
+    let array = [];
+    while(list.rest !== null){
+        array.push(list.value);
+        list = list.rest;
+    }
+    array.push(list.value);
+    return array;
+}
+console.log(arrayToList([10,20,30]));
+console.log(listToArray(arrayToList([1,2,3])));
