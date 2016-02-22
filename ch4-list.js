@@ -19,5 +19,9 @@ function listToArray(list) {
     array.push(list.value);
     return array;
 }
+function prepend(element, list) {
+    return {value: element, rest: list};
+}
 console.log(arrayToList([10,20,30]));
 console.log(listToArray(arrayToList([1,2,3])));
+console.log(prepend('Fitty', arrayToList(['a', 'b', 'c'])));
