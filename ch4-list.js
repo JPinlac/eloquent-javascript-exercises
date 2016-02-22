@@ -22,6 +22,13 @@ function listToArray(list) {
 function prepend(element, list) {
     return {value: element, rest: list};
 }
+function nth(position, list) {
+    if(position === 1) {
+        return list.value;
+    }
+    return nth(position -1, list.rest);
+}
 console.log(arrayToList([10,20,30]));
 console.log(listToArray(arrayToList([1,2,3])));
 console.log(prepend('Fitty', arrayToList(['a', 'b', 'c'])));
+console.log(nth(1, prepend('Fitty', arrayToList(['a', 'b', 'c']))));
